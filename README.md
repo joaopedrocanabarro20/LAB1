@@ -5,4 +5,4 @@ Jogo Nonogram desenvolvido em C utilizando Allegro 5.
 
 ## Imagem do jogo
 
-![Nonogram](images/nonogram.png)
+![Nonogram](imagens/nonogram.png)

@@ -393,7 +393,7 @@ EstadoTela verifica_botoes_jogo(Tela *t, Botao *voltar, Botao *reset, Botao *des
             reseta_tabuleiro(tabuleiro_nonogram, topo);
             t->_botao = false;
         }
-        if (desfazer != NULL && historico != NULL && topo != NULL && ret_contains_pt(desfazer->ret, cursor)){//utilizado chatgpt
+        if (desfazer != NULL && historico != NULL && topo != NULL && ret_contains_pt(desfazer->ret, cursor)){
             if (*topo > 0) {
                 (*topo)--;
                 int i = historico[*topo].linha;
@@ -425,7 +425,7 @@ EstadoTela verifica_botoes_jogo(Tela *t, Botao *voltar, Botao *reset, Botao *des
     }
     return estado_atual;
 }
-void calcula_linha(int resultado[][COLUNAS],int linha,int numeros[],int *qtd)//utilizado o chatgpt 
+void calcula_linha(int resultado[][COLUNAS],int linha,int numeros[],int *qtd)
 {
     int contador = 0;
     *qtd = 0;
@@ -484,7 +484,7 @@ void inicia_tabuleiro(Celula tabuleiro[][COLUNAS]){
         }
     }
 }
-void desenha_restantes(Tela *t,Celula tabuleiro[][COLUNAS],int resultado[][COLUNAS])//feito pelo chatgpt
+void desenha_restantes(Tela *t,Celula tabuleiro[][COLUNAS],int resultado[][COLUNAS])
 {
     char texto[50];
 
@@ -590,7 +590,7 @@ void verifica_cliqueclassico(Tela *t, Celula tabuleiro[][COLUNAS], jogada histor
             int j=(int)(x_clique/LARGURA_CELULA);
             int i=(int)(y_clique/ALTURA_CELULA); 
 
-            if (i>=0 && i<LINHAS && j>=0 && j<COLUNAS){//chatgpt
+            if (i>=0 && i<LINHAS && j>=0 && j<COLUNAS){
                 if (*topo < maxjogadas) {
                     historico[*topo].linha = i;
                     historico[*topo].coluna = j;
@@ -612,7 +612,7 @@ void verifica_clique_normal(Tela *t, Celula tabuleiro[][COLUNAS], int resultado[
     int j = (int)((mouse.x-MARGIN_HORIZONTAL)/LARGURA_CELULA);
     int i = (int)((mouse.y-MARGIN_VERTICAL)/ALTURA_CELULA);
 
-        if (i >= 0 && i < LINHAS && j >= 0 && j < COLUNAS) {//utilizado chatgpt
+        if (i >= 0 && i < LINHAS && j >= 0 && j < COLUNAS) {
             if (tabuleiro[i][j].estado == VAZIO){
                 if (resultado[i][j] == 1){
                     tabuleiro[i][j].estado = COLORIDO;
@@ -645,7 +645,7 @@ void cicla_estado_celula(Celula *c){
             break;
     }
 }
-bool verifica_vitoria(Celula tabuleiro[][COLUNAS], int resultado[][COLUNAS]){//utilizado a IA gemini
+bool verifica_vitoria(Celula tabuleiro[][COLUNAS], int resultado[][COLUNAS]){
     
     for(int i = 0; i < LINHAS; i++){
         int dicas_esperadas[COLUNAS];
@@ -730,7 +730,7 @@ void desenha_derrota(Tela *t){
     escreve_texto(t, p, "Suas vidas acabaram, tente novamente");
     escreve_texto(t, p2, "Clique em voltar para jogar novamente");
 }
-void desenha_vidas(Tela *t, int vidas){//utilizado claude 
+void desenha_vidas(Tela *t, int vidas){
     Cor vermelho = {0.8, 0, 0};
     Cor cinza= {0.6, 0.6, 0.6};
     char buf[20];

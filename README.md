@@ -1,1 +1,1 @@
-# Meu Repositório LAB1
+# Jogo Nonogram feito na disciplina Laboratório de Programação 1
